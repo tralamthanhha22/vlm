@@ -59,19 +59,22 @@ export default function Home() {
       className="flex h-screen flex-col">
       {/* Header */}
       <header className="flex items-center justify-between bg-blue-950 text-white p-4 shadow">
-        <div className="text-xl font-semibold">Logo | VLM System</div>
+        <div className="flex items-center space-x-2">
+          <img src="/VeronLogo.jpg" alt="Logo" className="h-10 object-contain" />
+          <div className="text-xl font-semibold text-white">| VLM System</div>
+        </div>       
         <nav className="space-x-4 flex items-center">
         <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
           scale: 1.5,
-          backgroundColor: "#0c0065"            
+          backgroundColor: "#1B2451"            
         }}>Upload</motion.button>
         <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
           scale: 1.5,
-          backgroundColor: "#0c0065"            
+          backgroundColor: "#1B2451"            
         }}>History</motion.button>
         <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
           scale: 1.5,
-          backgroundColor: "#0c0065"            
+          backgroundColor: "#1B2451"            
         }}>User</motion.button>
 
         </nav>
@@ -131,7 +134,7 @@ export default function Home() {
                 />
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="button bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded"
+                  className="button bg-blue-600 text-white px-4 py-2 rounded"
                 >
                   Chọn tệp
                 </button>

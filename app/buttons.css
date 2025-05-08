@@ -32,7 +32,7 @@
 }
 
 .button:hover {
-  background-color: #e5e7eb; /* Equivalent to Tailwind's hover:bg-gray-200 */
+  background-color: #2d7af6; /* Equivalent to Tailwind's hover:bg-gray-200 */
 }
 
 .button:focus {

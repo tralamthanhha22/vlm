@@ -1,6 +1,9 @@
 // app/page.tsx
 "use client";
 import { Progress } from "@/components/ui/progress";
+import './buttons.css';
+import { motion } from 'framer-motion';
+
 import React, { useState,useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,6 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { DownloadIcon, FileJson, FileSpreadsheet } from "lucide-react";
+import { tr } from "framer-motion/client";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("duan");
@@ -51,14 +55,25 @@ export default function Home() {
   };
   
   return (
-    <div className="flex h-screen flex-col">
+    <div
+      className="flex h-screen flex-col">
       {/* Header */}
-      <header className="flex items-center justify-between bg-gray-100 text-black p-4 shadow">
+      <header className="flex items-center justify-between bg-blue-950 text-white p-4 shadow">
         <div className="text-xl font-semibold">Logo | VLM System</div>
         <nav className="space-x-4 flex items-center">
-          <Button variant="ghost">Upload</Button>
-          <Button variant="ghost">History</Button>
-          <Button variant="ghost">User</Button>
+        <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
+          scale: 1.5,
+          backgroundColor: "#0c0065"            
+        }}>Upload</motion.button>
+        <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
+          scale: 1.5,
+          backgroundColor: "#0c0065"            
+        }}>History</motion.button>
+        <motion.button className="button-head" style={{ backgroundColor: "#1B2451" }} whileHover={{
+          scale: 1.5,
+          backgroundColor: "#0c0065"            
+        }}>User</motion.button>
+
         </nav>
       </header>
 
@@ -82,7 +97,7 @@ export default function Home() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto space-y-4 bg-white text-black">
+        <main className="flex-1 p-6 overflow-auto space-y-4 text-white" style={{ backgroundColor: "#174B94" }}>
           {/* Instruction Area */}
           <Card>
             <CardContent className="p-4">
@@ -92,6 +107,12 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
+
+          {/* Thêm Button test interaction */}
+          <button 
+          className="button">
+            Test Button
+          </button>
 
           {/* Upload Area Updated */}
           <Card>
@@ -108,12 +129,12 @@ export default function Home() {
                   ref={fileInputRef}
                   className="hidden"
                 />
-                <Button
+                <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="bg-blue-600 text-white"
+                  className="button bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded"
                 >
                   Chọn tệp
-                </Button>
+                </button>
               </div>
               <p className="text-sm text-gray-500">(.pdf, .jpg, .png)</p>
 
@@ -344,4 +365,4 @@ export default function Home() {
 //       </footer>
 //     </div>
 //   );
-// }
+// // }
